@@ -14,6 +14,7 @@ import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.jpa.QueryHints;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -110,7 +111,7 @@ public abstract class BaseDaoImpl<KYIMINHAN extends Serializable> implements Bas
 		final List<Predicate> predicates = new ArrayList<>();
 		predicates.add(criteriaBuilder.equal(root.get("id"), id));
 		criteriaQuery.where(predicates.toArray(new Predicate[0])).distinct(true);
-		return this.getSession().createQuery(criteriaQuery).getSingleResult();
+		return this.getSession().createQuery(criteriaQuery).setHint(QueryHints.HINT_FETCH_SIZE, 50).getSingleResult();
 	}
 
 	/*
@@ -126,6 +127,6 @@ public abstract class BaseDaoImpl<KYIMINHAN extends Serializable> implements Bas
 		criteriaQuery.select(root);
 		final List<Predicate> predicates = new ArrayList<>();
 		criteriaQuery.where(predicates.toArray(new Predicate[0])).distinct(true);
-		return this.getSession().createQuery(criteriaQuery).getResultList();
+		return this.getSession().createQuery(criteriaQuery).setHint(QueryHints.HINT_FETCH_SIZE, 50).getResultList();
 	}
 }

@@ -24,7 +24,7 @@ public class DepartmentDaoImpl extends BaseDaoImpl<Department> implements Depart
 	@Override
 	public void initialInsert() {
 		int count = 1;
-		for (int i = 1; i <= 20; i++) {
+		for (int i = 1; i <= 2000; i++) {
 			this.getSession().persist(Department.builder()
 					.departmentName(new StringBuilder("IT Department ").append(String.valueOf(i)).toString()).build());
 			System.out.println(count);

@@ -1,3 +1,6 @@
+/*
+ *
+ */
 package com.kyiminhan.spring.config;
 
 import java.beans.PropertyVetoException;
@@ -99,6 +102,26 @@ public class HibernateConfig implements WebMvcConfigurer {
 	@Value("${hibernate.jdbc.batch_size}")
 	private String hibernateJdbcBatchSize;
 
+	/** The hibernate jdbc fetch size. */
+	@Value("${hibernate.jdbc.fetch_size}")
+	private String hibernateJdbcFetchSize;
+
+	/** The hibernate cache use second level cache. */
+	@Value("${hibernate.cache.use_second_level_cache}")
+	private String hibernateCacheUseSecondLevelCache;
+
+	/** The hibernate cache region factory class. */
+	@Value("${hibernate.cache.region.factory_class}")
+	private String hibernateCacheRegionFactoryClass;
+
+	// /** The hibernate current session context class. */
+	// @Value("${hibernate.current_session_context_class}")
+	// private String hibernateCurrentSessionContextClass;
+
+	/** The hibernate cache use query cache. */
+	@Value("${hibernate.cache.use_query_cache}")
+	private String hibernateCacheUseQueryCache;
+
 	/**
 	 * Gets the data source.
 	 *
@@ -164,6 +187,8 @@ public class HibernateConfig implements WebMvcConfigurer {
 	private Properties additionalProperties() {
 		final Properties properties = new Properties();
 		properties.put(AvailableSettings.DIALECT, this.hibernteDialet);
+		// properties.put(AvailableSettings.CURRENT_SESSION_CONTEXT_CLASS,
+		// this.hibernateCurrentSessionContextClass);
 		properties.put(AvailableSettings.SHOW_SQL, this.hibernateShowSql);
 		properties.put(AvailableSettings.HBM2DDL_AUTO, this.hibernageHbmDdlAuto);
 		properties.put(AvailableSettings.ENABLE_LAZY_LOAD_NO_TRANS, this.hibernateLazyLoad);
@@ -175,7 +200,11 @@ public class HibernateConfig implements WebMvcConfigurer {
 		properties.put(AvailableSettings.C3P0_MAX_STATEMENTS, this.hibernateC3p0MaxStatements);
 
 		properties.put(AvailableSettings.STATEMENT_BATCH_SIZE, this.hibernateJdbcBatchSize);
+		properties.put(AvailableSettings.STATEMENT_FETCH_SIZE, this.hibernateJdbcFetchSize);
 		properties.put(AvailableSettings.POOL_SIZE, this.hibernateConnectionPoolSize);
+		properties.put(AvailableSettings.USE_SECOND_LEVEL_CACHE, this.hibernateCacheUseSecondLevelCache);
+		properties.put(AvailableSettings.USE_QUERY_CACHE, this.hibernateCacheUseQueryCache);
+		properties.put(AvailableSettings.CACHE_REGION_FACTORY, this.hibernateCacheRegionFactoryClass);
 		return properties;
 	}
 }

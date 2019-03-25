@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Home</title>
+<link rel="icon"
+	href="https://getbootstrap.com/docs/4.3/assets/img/favicons/favicon-32x32.png"
+	sizes="32x32" type="image/png">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" th:href="@{/static/css/bootstrap.min.css}">
+<!-- Material Design Bootstrap -->
+<link rel="stylesheet" th:href="@{/static/css/mdb.min.css}">
+<!-- Your custom styles (optional) -->
+<link rel="stylesheet" th:href="@{/static/css/style.css}">
+</head>
+<body>
+	<header th:replace="common/navbar.html :: navbar"> </header>
+	<!-- Start your project here-->
+	<main role="main" class="container">
+	<div class="jumbotron"
+		style="height: 100vh; padding-top: 17rem; margin-bottom: 0px;"></div>
+	</main>
+	<!-- /Start your project here-->
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript"
+		th:src="@{/static/js/jquery-3.3.1.min.js}"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" th:src="@{/static/js/popper.min.js}"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" th:src="@{/static/js/bootstrap.min.js}"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" th:src="@{/static/js/mdb.js}"></script>
+</body>
+</html>

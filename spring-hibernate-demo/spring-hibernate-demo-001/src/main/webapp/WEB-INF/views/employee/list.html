@@ -21,46 +21,45 @@
 </head>
 <body>
 	<header th:replace="common/navbar.html :: navbar"> </header>
-	<main role="main" class="container">
-	<div class="jumbotron"
-		style="min-height: 100vh; padding-top: 6rem;">
-		<div class="row">
-			<div class="col-md-12 pb-2">
-				<a class="btn btn-sm default-color waves-effect float-right"
-					th:href="@{/employee/create}"><i class="fas fa-plus mr-1"></i>Create</a>
-			</div>
-			<div class="col-md-12">
-				<table class="table table-sm table-bordered table-hover">
-					<thead>
-						<tr class="default-color text-white">
-							<th scope="col">No</th>
-							<th scope="col">Name</th>
-							<th scope="col">Email</th>
-							<th scope="col">Address</th>
-							<th scope="col">Phone</th>
-							<th class="text-center" scope="col" colspan="2">Edit/Delete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="employee,iterStat : ${employees}">
-							<td class="text-center" th:text="${iterStat.count}"></td>
-							<td><a class="text-decoration-none"
-								th:href="@{/employee/__${employee.id}__/detail}"
-								th:text="${employee.name}"></a></td>
-							<td th:text="${employee.email}"></td>
-							<td th:text="${employee.address}"></td>
-							<td th:text="${employee.phone}"></td>
-							<td class="text-center"><a class="fas fa-edit"
-								th:href="@{/employee/__${employee.id}__/edit}"></a></td>
-							<td class="text-center"><a class="fas fa-trash-alt"
-								th:href="@{/employee/__${employee.id}__/delete}"></a></td>
-						</tr>
-					</tbody>
-				</table>
+	<div class="container">
+		<div class="jumbotron" style="min-height: 100vh; padding-top: 6rem;">
+			<div class="row">
+				<div class="col-md-12 pb-2">
+					<a class="btn btn-sm default-color waves-effect float-right"
+						th:href="@{/employee/create}"><i class="fas fa-plus mr-1"></i>Create</a>
+				</div>
+				<div class="col-md-12">
+					<table class="table table-sm table-bordered table-hover">
+						<thead>
+							<tr class="default-color text-white">
+								<th scope="col">No</th>
+								<th scope="col">Name</th>
+								<th scope="col">Email</th>
+								<th scope="col">Address</th>
+								<th scope="col">Phone</th>
+								<th class="text-center" scope="col" colspan="2">Edit/Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="employee,iterStat : ${employees}">
+								<td class="text-center" th:text="${iterStat.count}"></td>
+								<td><a class="text-decoration-none"
+									th:href="@{/employee/__${employee.id}__/detail}"
+									th:text="${employee.name}"></a></td>
+								<td th:text="${employee.email}"></td>
+								<td th:text="${employee.address}"></td>
+								<td th:text="${employee.phone}"></td>
+								<td class="text-center"><a class="fas fa-edit"
+									th:href="@{/employee/__${employee.id}__/edit}"></a></td>
+								<td class="text-center"><a class="fas fa-trash-alt"
+									th:href="@{/employee/__${employee.id}__/delete}"></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
-	</main>
 
 	<!-- SCRIPTS -->
 	<!-- JQuery -->

@@ -21,67 +21,67 @@
 </head>
 <body>
 	<header th:replace="common/navbar.html :: navbar"> </header>
-	<main role="main" class="container">
-	<div class="jumbotron"
-		style="height: 100vh; padding-top: 6rem; margin-bottom: 0px;">
-		<form th:method="get" th:object="${employee}">
-			<div class="row justify-content-center">
-				<div class="col-md-9">
-					<div class="row justify-content-center">
-						<div class="col-md-6">
-							<!-- Material input -->
-							<div class="md-form form-sm mt-0">
-								<i class="fas fa-user prefix"></i> <input type="text"
-									th:field="*{name}" id="name"
-									class="form-control validate disabled" required="required">
-								<label for="name">Employee Name</label>
+	<div class="container">
+		<div class="jumbotron"
+			style="height: 100vh; padding-top: 6rem; margin-bottom: 0px;">
+			<form th:method="get" th:object="${employee}">
+				<div class="row justify-content-center">
+					<div class="col-md-9">
+						<div class="row justify-content-center">
+							<div class="col-md-6">
+								<!-- Material input -->
+								<div class="md-form form-sm mt-0">
+									<i class="fas fa-user prefix"></i> <input type="text"
+										th:field="*{name}" id="name"
+										class="form-control validate disabled" required="required">
+									<label for="name">Employee Name</label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row justify-content-center">
-						<div class="col-md-6 mt-0">
-							<!-- Material input -->
-							<div class="md-form form-sm mt-0">
-								<i class="fas fa-envelope prefix"></i> <input type="email"
-									th:field="*{email}" id="email"
-									class="form-control validate disabled" required="required">
-								<label for="email">E-mail address</label>
+						<div class="row justify-content-center">
+							<div class="col-md-6 mt-0">
+								<!-- Material input -->
+								<div class="md-form form-sm mt-0">
+									<i class="fas fa-envelope prefix"></i> <input type="email"
+										th:field="*{email}" id="email"
+										class="form-control validate disabled" required="required">
+									<label for="email">E-mail address</label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row justify-content-center">
-						<div class="col-md-6">
-							<!-- Material input -->
-							<div class="md-form form-sm mt-0">
-								<i class="fas fa-map-marker-alt prefix"></i>
-								<textarea th:field="*{address}" id="address"
-									class="md-textarea form-control validate disabled"
-									required="required" rows="1" disabled="disabled"></textarea>
-								<label for="address">Employee Address</label>
+						<div class="row justify-content-center">
+							<div class="col-md-6">
+								<!-- Material input -->
+								<div class="md-form form-sm mt-0">
+									<i class="fas fa-map-marker-alt prefix"></i>
+									<textarea th:field="*{address}" id="address"
+										class="md-textarea form-control validate disabled"
+										required="required" rows="1" disabled="disabled"></textarea>
+									<label for="address">Employee Address</label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row justify-content-center">
-						<div class="col-md-6">
-							<!-- Material input -->
-							<div class="md-form form-sm mt-0">
-								<i class="fas fa-mobile prefix"></i> <input type="text"
-									th:field="*{phone}" id="phone"
-									class="form-control validate disabled" required="required">
-								<label for="phone">Employee Phone</label>
+						<div class="row justify-content-center">
+							<div class="col-md-6">
+								<!-- Material input -->
+								<div class="md-form form-sm mt-0">
+									<i class="fas fa-mobile prefix"></i> <input type="text"
+										th:field="*{phone}" id="phone"
+										class="form-control validate disabled" required="required">
+									<label for="phone">Employee Phone</label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row justify-content-center">
-						<a class="btn btn-sm default-color waves-effect mr-2 col-md-2"
-							th:href="@{/employee/list}">Cancel</a>
-					</div>
+						<div class="row justify-content-center">
+							<a class="btn btn-sm default-color waves-effect mr-2 col-md-2"
+								th:href="@{/employee/list}">Cancel</a>
+						</div>
 
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
-	</main>
 
 	<!-- SCRIPTS -->
 	<!-- JQuery -->

@@ -21,36 +21,36 @@
 </head>
 <body>
 	<header th:replace="common/navbar.html :: navbar"> </header>
-	<main role="main" class="container">
-	<div class="jumbotron"
-		style="height: 100vh; padding-top: 6rem; margin-bottom: 0px;">
-		<form th:action="@{/department/__${department.id}__/edit}"
-			th:method="post" th:object="${department}">
-			<div class="row justify-content-center">
-				<div class="col-md-9">
-					<div class="row justify-content-center">
-						<div class="col-md-6">
-							<!-- Material input -->
-							<div class="md-form form-sm mt-0">
-								<i class="fas fa-building prefix"></i> <input type="text"
-									th:field="*{departmentName}" id="name"
-									class="form-control validate" required="required"> <label
-									for="name">Department Name</label>
+	<div class="container">
+		<div class="jumbotron"
+			style="height: 100vh; padding-top: 6rem; margin-bottom: 0px;">
+			<form th:action="@{/department/__${department.id}__/edit}"
+				th:method="post" th:object="${department}">
+				<div class="row justify-content-center">
+					<div class="col-md-9">
+						<div class="row justify-content-center">
+							<div class="col-md-6">
+								<!-- Material input -->
+								<div class="md-form form-sm mt-0">
+									<i class="fas fa-building prefix"></i> <input type="text"
+										th:field="*{departmentName}" id="name"
+										class="form-control validate" required="required"> <label
+										for="name">Department Name</label>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row justify-content-center">
-						<a class="btn btn-sm default-color waves-effect mr-2 col-md-2"
-							th:href="@{/department/list}">Cancel</a>
-						<button type="submit"
-							class="btn btn-sm default-color waves-effect mr-2 col-md-2">Edit</button>
-					</div>
+						<div class="row justify-content-center">
+							<a class="btn btn-sm default-color waves-effect mr-2 col-md-2"
+								th:href="@{/department/list}">Cancel</a>
+							<button type="submit"
+								class="btn btn-sm default-color waves-effect mr-2 col-md-2">Edit</button>
+						</div>
 
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
-	</main>
 
 	<!-- SCRIPTS -->
 	<!-- JQuery -->
